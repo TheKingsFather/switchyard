@@ -1,0 +1,136 @@
+QWidget {
+    background: $background;
+    color: $text;
+    font-family: "Inter", "Noto Sans", sans-serif;
+    font-size: 14px;
+}
+QFrame#sidebar { background: $sidebar; border-right: 1px solid $divider; }
+QLabel { background: transparent; }
+QLabel[role="brand"] { font-size: 17px; font-weight: 700; }
+QLabel[role="pageTitle"] { font-size: 32px; font-weight: 700; }
+QLabel[role="metric"] { font-size: 29px; font-weight: 600; color: $metric; }
+QLabel[role="metricValue"] { font-size: 20px; font-weight: 700; color: $metricValue; }
+QLabel[role="readout"] { color: $readout; font-weight: 600; }
+QLabel[role="keycap"] { color: $keyText; border: 1px solid $keyBorder; border-radius: 4px; font-size: 11px; }
+QLabel[role="keyHint"] { color: $keyHint; font-size: 11px; }
+QLabel[role="section"] { font-weight: 650; }
+QLabel[role="muted"] { color: $muted; }
+QLabel[role="sidebarStatus"] { color: $muted; padding: 9px 7px; }
+QLabel[role="sidebarStatus"][awake="true"] { color: $awake; }
+QFrame[role="panel"] { background: $panel; border: 1px solid $panelBorder; border-radius: 10px; }
+QFrame[role="metricTile"] { background: $tile; border: 1px solid $tileBorder; border-radius: 7px; }
+QPushButton, QComboBox {
+    background: $control;
+    border: 1px solid $controlBorder;
+    border-radius: 7px;
+    padding: 7px 12px;
+    min-height: 20px;
+}
+QPushButton:hover, QComboBox:hover { background: $hover; }
+QPushButton:focus, QComboBox:focus { border-color: $focus; }
+QPushButton:disabled, QComboBox:disabled { color: $disabledText; border-color: $disabledBorder; }
+QComboBox { padding-right: 6px; combobox-popup: 0; }
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 26px;
+    border: none;
+    background: transparent;
+}
+QComboBox::down-arrow { image: url("$comboArrow"); width: 12px; height: 8px; }
+QComboBox::down-arrow:disabled { image: url("$comboArrowDisabled"); }
+QWidget#dropdownPopup { background: transparent; border: none; }
+#dropdownList {
+    background: transparent;
+    border: none;
+    padding: 3px;
+    outline: 0;
+    selection-background-color: $selection;
+    selection-color: $selectionText;
+}
+QWidget#dropdownViewport { background: transparent; }
+#dropdownList::item {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 5px 8px;
+}
+#dropdownList::item:hover { background: $hover; }
+#dropdownList::item:selected {
+    background: $selection;
+    border-color: $inputFocus;
+    color: $selectionText;
+}
+QPushButton[role="nav"] {
+    text-align: left;
+    padding: 5px 12px;
+    background: $sidebar;
+    border-color: transparent;
+}
+QPushButton[role="nav"]:hover { background: $navHover; }
+QPushButton[role="nav"]:checked { background: $navSelected; color: $navSelectedText; font-weight: 700; }
+QPushButton[role="nav"]:focus { border-color: $focus; }
+QPushButton[role="panelTab"] { background: $tab; border-color: $tabBorder; }
+QPushButton[role="panelTab"]:checked { background: $tabSelected; border-color: $tabSelectedBorder; color: $tabSelectedText; font-weight: 700; }
+QPushButton[role="panelTab"]:hover { border-color: $tabHoverBorder; }
+QPushButton[role="icon"] { padding: 2px 3px; min-height: 19px; }
+QPushButton[role="icon"]:checked { background: $toggled; border-color: $toggledBorder; }
+QPushButton[role="icon"]::menu-indicator { width: 0; }
+QToolButton[role="disclosure"] {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: $disclosure;
+    font-weight: 600;
+    padding: 3px 6px;
+}
+QToolButton[role="disclosure"]:hover { background: $hover; }
+QToolButton[role="disclosure"]:focus { border-color: $focus; }
+QToolButton[role="disclosure"]:pressed { background: $selection; }
+QWidget#processRows { background: transparent; }
+QPushButton[role="primary"] { background: $primary; color: $primaryText; border-color: $primary; font-weight: 700; }
+QPushButton[role="primary"]:hover { background: $primaryHover; }
+QPushButton[role="primary"]:focus { border-color: $primaryFocus; }
+QPushButton[role="primary"]:disabled { background: $primaryDisabled; color: $primaryDisabledText; border-color: $primaryDisabledBorder; }
+QLineEdit, QPlainTextEdit, QListWidget {
+    background: $input;
+    border: 1px solid $inputBorder;
+    border-radius: 8px;
+    padding: 6px 9px;
+    selection-background-color: $selection;
+    selection-color: $selectionText;
+}
+QLineEdit:focus, QPlainTextEdit:focus, QListWidget:focus { border-color: $inputFocus; }
+QListWidget::item { padding: 7px 6px; border-radius: 4px; }
+QListWidget::item:selected { background: $selection; color: $selectionText; }
+QProgressBar { border: none; border-radius: 3px; background: $meterTrack; max-height: 6px; }
+QProgressBar::chunk { background: $accent; border-radius: 3px; }
+QSlider::groove:horizontal { background: $sliderTrack; height: 5px; border-radius: 2px; }
+QSlider::sub-page:horizontal { background: $accent; border-radius: 2px; }
+QSlider::handle:horizontal { background: $sliderHandle; width: 14px; margin: -5px 0; border-radius: 7px; }
+QScrollBar:vertical, QScrollBar:horizontal {
+    border: none;
+    border-radius: 4px;
+    background: $scrollTrack;
+}
+QScrollBar:vertical { width: 9px; margin: 2px 1px; }
+QScrollBar:horizontal { height: 9px; margin: 1px 2px; }
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background: $scrollHandle;
+    border-radius: 3px;
+}
+QScrollBar::handle:vertical { min-height: 25px; margin: 0 1px; }
+QScrollBar::handle:horizontal { min-width: 25px; margin: 1px 0; }
+QScrollBar::handle:vertical:hover, QScrollBar::handle:horizontal:hover { background: $scrollHover; }
+QScrollBar::handle:vertical:pressed, QScrollBar::handle:horizontal:pressed { background: $focus; }
+QScrollBar::add-line, QScrollBar::sub-line, QScrollBar::add-page, QScrollBar::sub-page {
+    background: transparent;
+    border: none;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { width: 0; }
+QAbstractScrollArea::corner { background: transparent; border: none; }
+QListWidget::corner, QPlainTextEdit::corner { background: $input; }
+QMenu { border: 1px solid $controlBorder; padding: 5px; }
+QMenu::item { padding: 5px 14px; }
+QMenu::item:selected { background: $selection; color: $selectionText; }
+QToolTip { background: $panel; color: $text; border: 1px solid $controlBorder; }
